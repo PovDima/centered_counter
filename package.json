@@ -7,11 +7,29 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "test": "vitest"
+    "test": "vitest",
+    "lint": "npx eslint ./src",
+    "format": "npx prettier --ignore-path .gitignore --write \"**/*.+(ts)\"",
+    "prepare": "husky",
+    "cypress": "npx cypress run"
   },
   "devDependencies": {
-    "typescript": "^5.2.2",
+    "@eslint/js": "^9.10.0",
+    "cypress": "^13.14.2",
+    "eslint": "^9.10.0",
+    "husky": "^9.1.5",
+    "jsdom": "^25.0.0",
+    "lint-staged": "^15.2.10",
+    "prettier": "^3.3.3",
+    "typescript": "^5.5.4",
+    "typescript-eslint": "^8.5.0",
     "vite": "^5.0.8",
-    "vitest": "^1.2.1"
+    "vitest": "1.6.0"
+  },
+  "lint-staged": {
+    "**/*.{ts}": [
+      "npm run lint",
+      "npm run format"
+    ]
   }
 }
