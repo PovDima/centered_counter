@@ -19,7 +19,7 @@ main {
   top: 2rem;
   left: 2rem;
   display: flex;
-  position: relative;
+  position: absolute;
 }
 
 .control {
